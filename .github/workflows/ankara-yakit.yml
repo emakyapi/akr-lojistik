@@ -1,0 +1,42 @@
+
+name: Ankara Akaryakit Fiyatlari
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "15 3,9,15,21 * * *"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: ankara-akaryakit
+  cancel-in-progress: false
+
+jobs:
+  update-fuel:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Depoyu indir
+        uses: actions/checkout@v4
+
+      - name: Python kur
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Ankara fiyatlarini guncelle
+        run: python scripts/update_fuel.py
+
+      - name: Guncel veriyi kaydet
+        run: |
+          if [ -n "$(git status --porcelain)" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add -A
+            git commit -m "Ankara akaryakit fiyatlarini guncelle"
+            git push
+          else
+            echo "Kaydedilecek yeni veri yok."
+          fi
