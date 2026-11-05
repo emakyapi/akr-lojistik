@@ -3,10 +3,10 @@
   "prices": {
     "benzin": 81.5,
     "motorin": 101.6,
-    "lpg": 52.07
+    "lpg": 52.0
   },
-  "valid_date": "2026-11-04",
-  "updated_at": "2026-11-04T21:16:21.416000+00:00",
+  "valid_date": "2026-11-05",
+  "updated_at": "2026-11-05T10:45:45.060972+00:00",
   "source": "https://guncelakaryakitfiyatlari.com/veri/iller.csv",
   "price_type": "EPDK dağıtıcı bildirimleri il ortancası"
 }
