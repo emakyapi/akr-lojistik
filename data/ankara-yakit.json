@@ -1,12 +1,12 @@
 {
   "city": "Ankara",
   "prices": {
-    "benzin": 75.54,
+    "benzin": 75.6,
     "motorin": 96.23,
     "lpg": 52.0
   },
   "valid_date": "2026-11-07",
-  "updated_at": "2026-11-09T11:23:18.140518+00:00",
+  "updated_at": "2026-11-09T23:46:13.070599+00:00",
   "source": "https://guncelakaryakitfiyatlari.com/veri/iller.csv",
   "price_type": "EPDK dağıtıcı bildirimleri il ortancası"
 }
